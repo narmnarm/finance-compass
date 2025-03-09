@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Logo from './Logo';
-import { Menu, X, ChevronDown, LineChart, CreditCard, PieChart, User, Settings } from 'lucide-react';
+import { Menu, X, ChevronDown, LineChart, CreditCard, PieChart, User, Settings, MessageSquare } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,6 +27,7 @@ const Navbar: React.FC = () => {
     { name: 'Dashboard', path: '/dashboard', icon: <LineChart className="h-4 w-4" /> },
     { name: 'Credit Analysis', path: '/credit-analysis', icon: <CreditCard className="h-4 w-4" /> },
     { name: 'Transactions', path: '/transactions', icon: <PieChart className="h-4 w-4" /> },
+    { name: 'AI Chat', path: '/chat', icon: <MessageSquare className="h-4 w-4" /> },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -62,8 +63,8 @@ const Navbar: React.FC = () => {
             <Button variant="ghost" size="icon">
               <Settings className="h-5 w-5" />
             </Button>
-            <Button variant="default" className="bg-albert-600 hover:bg-albert-700 text-white">
-              Get Started
+            <Button variant="default" className="bg-albert-600 hover:bg-albert-700 text-white" asChild>
+              <Link to="/chat">Get Started</Link>
             </Button>
           </div>
           
@@ -95,8 +96,8 @@ const Navbar: React.FC = () => {
                 </Link>
               ))}
               <div className="pt-4 flex justify-center">
-                <Button className="w-full bg-albert-600 hover:bg-albert-700 text-white">
-                  Get Started
+                <Button className="w-full bg-albert-600 hover:bg-albert-700 text-white" asChild>
+                  <Link to="/chat">Get Started</Link>
                 </Button>
               </div>
             </div>

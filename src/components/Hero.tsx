@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronRight, Shield, BarChart3, LineChart, Sparkles } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Hero: React.FC = () => {
   return (
@@ -23,11 +23,15 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button className="bg-albert-600 hover:bg-albert-700 text-white h-12 px-6 rounded-lg">
-              Get Started <ChevronRight className="ml-2 h-4 w-4" />
+            <Button className="bg-albert-600 hover:bg-albert-700 text-white h-12 px-6 rounded-lg" asChild>
+              <Link to="/chat">
+                Get Started <ChevronRight className="ml-2 h-4 w-4" />
+              </Link>
             </Button>
-            <Button variant="outline" className="h-12 px-6 rounded-lg">
-              View Demo
+            <Button variant="outline" className="h-12 px-6 rounded-lg" asChild>
+              <Link to="/demo">
+                View Demo
+              </Link>
             </Button>
           </div>
           

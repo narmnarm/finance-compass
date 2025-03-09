@@ -1,7 +1,6 @@
 
 import React from 'react';
 import Navbar from './Navbar';
-import ChatAssistant from './ChatAssistant';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -21,8 +20,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="pt-24 pb-20 min-h-screen">
         {children}
       </main>
-      
-      <ChatAssistant />
       
       <footer className="bg-secondary/50 backdrop-blur-sm py-6 border-t border-border/30">
         <div className="container mx-auto px-6">
